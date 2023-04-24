@@ -17,14 +17,14 @@ private Long id;
 
 private String name;
 
-private double price;
+private String price;
 private int quantity;
 private String description;
 
     public Product() {
     }
 
-    public Product(Long id, String name, double price, int quantity, String description) {
+    public Product(Long id, String name, String price, int quantity, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -48,11 +48,11 @@ private String description;
         this.name = name;
     }
 
-    public double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 

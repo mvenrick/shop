@@ -46,10 +46,10 @@ public class ProductController {
     }
 
     @PutMapping("{id}")
-    public ResponseEntity<Product> updateProduct(@PathVariable Long id, @RequestBody Product product) {
-        if (product.getId() != id) {
+    public ResponseEntity<Product> updateProduct(@PathVariable int id, @RequestBody Product product) {
+        if (product.getId() != Long.valueOf(id)) {
             return new ResponseEntity<>(HttpStatus.CONFLICT);
-        } else if (productRepository.existsById(id)) {
+        } else if (productRepository.existsById(Long.valueOf(id))) {
             productRepository.save(product);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }
